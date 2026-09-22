@@ -52,6 +52,10 @@ Etiqueta al final #etiqueta
 | 1 | 2 |
 
 [enlace md estándar](https://example.com)
+
+Referencia con nota a pie[^pie].
+
+[^pie]: Texto de la nota al pie que no debe perderse.
 `,
 	'Otra Nota.md': `EMBEDDED: contenido de la nota hermana
 
@@ -137,6 +141,9 @@ test('fixture con toda la sintaxis obsidian -> docx fiel', async () => {
 
 	// tabla
 	assert.ok(doc.includes('<w:tbl>'), 'tabla convertida a w:tbl');
+
+	// definición de footnote ([^pie]: ...) no se traga (markdown-it la come como link ref)
+	assert.ok(doc.includes('Texto de la nota al pie que no debe perderse'), 'definición de footnote visible en el documento');
 
 	// etiqueta -> texto plano
 	assert.ok(!doc.includes('#etiqueta'), '#etiqueta pierde el #');

@@ -143,6 +143,9 @@ function transformLines(text: string, vault: PreprocessVault, sourcePath: string
 
 function inlineTransform(line: string, vault: PreprocessVault, sourcePath: string): string {
 	let s = line;
+	// Definición de footnote ([^1]: texto) -> <sup>1</sup> texto; si no, markdown-it
+	// la traga como "link reference definition" y el contenido desaparece del documento.
+	s = s.replace(/^\[\^([^\]]+)\]:\s*(.*)$/, '<sup>$1</sup> $2');
 	// %%oculto%% -> eliminar (ponytail: solo comentario en la misma línea)
 	s = s.replace(/%%.*?%%/g, '');
 	// Wikilinks -> [texto](obsidian://...) si la nota existe, si no solo texto

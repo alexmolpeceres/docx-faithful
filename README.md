@@ -21,6 +21,7 @@ Pre-procesado de sintaxis Obsidian antes de convertir:
 | `==resaltado==` | Highlight amarillo (`<w:highlight w:val="yellow"/>`) |
 | `%%oculto%%` | Eliminado |
 | `#etiqueta` | Texto plano (sin `#`) |
+| `[^1]` referencia / `[^1]: texto` definición | Superíndice `1`; la definición NO se traga: sale visible como `<sup>1</sup> texto` (markdown-it la comería como link reference) |
 
 Badges de callout: `note`/`info`→`ℹ️ NOTA`, `warning`/`caution`/`danger`/`bug`→`⚠️ AVISO`,
 `tip`/`success`/`example`→`💡 CONSEJO`, `quote`→`❝ CITA`, resto→`📌 TIPO`.
