@@ -1,0 +1,28 @@
+{
+	"name": "faithful-docx-export",
+	"version": "1.0.0",
+	"description": "Export Obsidian notes to Word (.docx) without breaking Obsidian syntax: typed callouts, wikilinks, embeds.",
+	"main": "main.js",
+	"type": "module",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"test": "node --test test/converter.test.mjs"
+	},
+	"keywords": ["obsidian", "plugin", "docx", "word"],
+	"license": "MIT",
+	"devDependencies": {
+		"@types/markdown-it": "^14.1.2",
+		"@types/node": "^22.15.17",
+		"esbuild": "0.25.5",
+		"obsidian": "latest",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"fflate": "^0.8.1",
+		"highlight.js": "^11.9.0",
+		"markdown-it": "^14.0.0",
+		"markdown-it-emoji": "^3.0.0",
+		"markdown-it-mark": "^4.0.0"
+	}
+}
