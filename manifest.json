@@ -4,6 +4,6 @@
 	"version": "1.0.0",
 	"minAppVersion": "1.0.0",
 	"description": "Export notes to Word (.docx) keeping Obsidian syntax intact: typed callouts, wikilinks, embeds.",
-	"author": "",
+	"author": "alexmolpeceres",
 	"isDesktopOnly": true
 }
